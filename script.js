@@ -19,8 +19,8 @@ function computerPlay() {
 computerPlay();
 
 function playRound(computerChoice, humanChoice) {
-    // computerChoice is obtained from computerPlay function
     // humanChoice is obtained from human input
+    // computerChoice is obtained from computerPlay function    
     // Check if humanChoice equals to Rock, Paper or Scissors (case insensitive)
     // Compare humanChoice to computerChoice
     // Display result
@@ -34,4 +34,9 @@ function game() {
     // If computer won increment computerScore by 1
     // Display round scores
   // Display game winner
+
+function readHumanChoice() {
+  // Returns value of the radio button selected by player
+
+}
 }

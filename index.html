@@ -8,9 +8,29 @@
   <body>
     <h1>Rock Paper Scissors game</h1>
     <h2>Player Choice</h2>
-    <p>Not implemented yet</p>
+    <p>Enter your move:</p>
+    <form>
+      <div class = "rpschoice">
+        <input type="radio" id="Rock" name="humanChoice" value="Rock" checked>
+        <label for="Rock">Rock</label>
+        <input type="radio" id="Paper" name="humanChoice" value="Paper">
+        <label for="Paper">Paper</label>
+        <input type="radio" id="Scissors" name="humanChoice" value="Scissors">
+        <label for="Scissors">Scissors</label>
+      </div>
+      <div class="rpschoice">
+        <button type="submit">Play!</button>
+      </div>
+    </form>
     <h2>Computer Choice</h2>
     <p id="compChoice"></p>
+    <h2>Score</h2>
+    <div class="scores">
+      <p>You:</p>
+      <p id="humanScore"></p>
+      <p>Computer:</p>
+      <p id="computerScore"></p>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
