@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RPS game (basic)</title>
+    </head>
+    <body>
+        <script>
+            function computerPlay() {
+                // Randomly choose either Rock, Paper or Scissors
+                let computerChoice = "";
+                let choiceNumber = Math.floor(Math.random() * 3) + 1;
+                switch (choiceNumber) {
+                case 1:
+                    computerChoice = "rock";
+                    break;
+                case 2:
+                    computerChoice = "paper";
+                    break;
+                case 3: 
+                    computerChoice = "scissors"; 
+                }
+                // Return the chosen value
+                console.log(computerChoice);
+                return computerChoice;               
+            }
+             
+            function getHumanMove() {
+                // Get human move
+                let move = "";
+                let moveCheck = true;
+                do {
+                    move = window.prompt("Your move: (Rock, Paper or Scissors)");
+                    move = move.toLowerCase();
+                    // Check if move is correct
+                    if (move === "rock" || move === "paper" || move === "scissors") {
+                        moveCheck = false;
+                    } else moveCheck = true;
+                } while (moveCheck);
+                // Return the chosen move
+                console.log(move);
+                return move;
+            }
+
+            function playRound(computerChoice, humanChoice) {
+                // Compare humanChoice to computerChoice
+                let result = "";
+                if (computerChoice === humanChoice) {
+                    result = "It's a tie!"
+                } else if (computerChoice === "rock" && humanChoice === "scissors") {
+                    result = "Computer wins!";
+                } else if (computerChoice === "paper" && humanChoice === "rock") {
+                    result = "Computer wins!";
+                } else if (computerChoice === "scissors" && humanChoice === "paper") {
+                    result = "Computer wins!";
+                } else {
+                    result = "You win!";
+                }
+                // Display result
+                console.log("Computer chose", computerChoice, "and you chose", humanChoice, "=>", result);
+                return result;
+            }
+
+            function playGame() {
+            // Declare humanScore & computerScore variables and initialize them with 0 value.
+            // Make 5 iteration loop
+                // Call playRound function
+                // If human won increment humanScore by 1
+                // If computer won increment computerScore by 1
+                // Display round scores
+            // Display game winner
+            }
+        </script>
+    </body>
+</html>

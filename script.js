@@ -16,7 +16,8 @@ function computerPlay() {
     // Return the chosen value
 }
 
-computerPlay();
+// computerPlay();
+console.log(readHumanChoice());
 
 function playRound(computerChoice, humanChoice) {
     // humanChoice is obtained from human input
@@ -26,7 +27,7 @@ function playRound(computerChoice, humanChoice) {
     // Display result
 }
 
-function game() {
+function playGame() {
   // Declare humanScore & computerScore variables and initialize them with 0 value.
   // Make 5 iteration loop
     // Call playRound function
@@ -34,9 +35,12 @@ function game() {
     // If computer won increment computerScore by 1
     // Display round scores
   // Display game winner
+}
 
 function readHumanChoice() {
   // Returns value of the radio button selected by player
 
-}
+  var humanChoice = document.forms.humanChoiceForm.humanChoice.value;
+  // console.log(humanChoice);
+  return humanChoice;
 }

@@ -1,5 +1,15 @@
+body {
+    border-style: solid;
+    border-radius: 15px;
+    box-shadow: 0 0 50px brown;
+    margin: 50px 550px 0px 550px;
+}
+
 h1 {
     text-align: center;
+    background-color: brown;
+    box-shadow: 0 0 25px brown;
+    padding: 5px 5px 5px 5px;
 }
 
 h2 {
