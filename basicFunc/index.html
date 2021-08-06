@@ -5,45 +5,40 @@
         <title>RPS game (basic)</title>
     </head>
     <body>
+        <h1>Rock Paper Scissors Game</h1>
+        <p>Use your browser developers console to play.</p>
+        <p>Call playGame() function to start.</p>
         <script>
-            function computerPlay() {
-                // Randomly choose either Rock, Paper or Scissors
-                let computerChoice = "";
-                let choiceNumber = Math.floor(Math.random() * 3) + 1;
-                switch (choiceNumber) {
+            function getComputerMove() {
+                let computerMove= "";
+                let moveNumber = Math.floor(Math.random() * 3) + 1;
+                switch (moveNumber) {
                 case 1:
-                    computerChoice = "rock";
+                    computerMove = "rock";
                     break;
                 case 2:
-                    computerChoice = "paper";
+                    computerMove = "paper";
                     break;
                 case 3: 
-                    computerChoice = "scissors"; 
+                    computerMove = "scissors"; 
                 }
-                // Return the chosen value
-                // console.log(computerChoice);
-                return computerChoice;               
+                return computerMove;               
             }
              
             function getHumanMove() {
-                // Get human move
-                let move = "";
+                let humanMove = "";
                 let moveCheck = true;
                 do {
-                    move = window.prompt("Your move: (Rock, Paper or Scissors)");
-                    move = move.toLowerCase();
-                    // Check if move is correct
-                    if (move === "rock" || move === "paper" || move === "scissors") {
+                    humanMove = window.prompt("Your move: (Rock, Paper or Scissors)");
+                    humanMove = humanMove.toLowerCase();
+                    if (humanMove === "rock" || humanMove === "paper" || humanMove === "scissors") {
                         moveCheck = false;
                     } else moveCheck = true;
-                } while (moveCheck);
-                // Return the chosen move
-                // console.log(move);
-                return move;
+                } while (moveCheck);               
+                return humanMove;
             }
 
             function playRound(computerChoice, humanChoice) {
-                // Compare humanChoice to computerChoice
                 let result = "";
                 if (computerChoice === humanChoice) {
                     result = "It's a tie!"
@@ -56,31 +51,28 @@
                 } else {
                     result = "You win!";
                 }
-                // Display result
                 console.log("Computer chose", computerChoice, "and you chose", humanChoice, "=>", result);
                 return result;
             }
 
             function playGame() {
-            // Declare humanScore & computerScore variables and initialize them with 0 value.
-            let humanScore = 0;
-            let computerScore = 0;
-            // Make 5 iteration loop
-            for (i = 0; i < 5; i++) {
-                // Call playRound function
-                console.log("Round:", i+1)
-                result = playRound(computerPlay(), getHumanMove());
-                // If human won increment humanScore by 1 or if computer won increment computerScore by 1
-                // console.log(result);
-                if (result === "Computer wins!") {
-                    computerScore++
-                } else if (result === "You win!") {
-                    humanScore++
-                } 
-                // Display round scores
-                console.log("Computer:", computerScore, "You:", humanScore);
-            }
-            // Display game winner
+                let humanScore = 0;
+                let computerScore = 0;                
+                for (i = 0; i < 5; i++) {
+                    console.log("Round:", i+1)
+                    result = playRound(getComputerMove(), getHumanMove());
+                    if (result === "Computer wins!") {
+                        computerScore++
+                    } else if (result === "You win!") {
+                        humanScore++
+                    } 
+                    console.log("Computer:", computerScore, "You:", humanScore);
+                }
+                if (humanScore > computerScore) {
+                    return "You won this game!"
+                } else if (computerScore > humanScore) {
+                    return "Computer won this game!"
+                } else return "It's a tie!"
             }
         </script>
     </body>
