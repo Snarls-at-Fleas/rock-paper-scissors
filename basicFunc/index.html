@@ -21,7 +21,7 @@
                     computerChoice = "scissors"; 
                 }
                 // Return the chosen value
-                console.log(computerChoice);
+                // console.log(computerChoice);
                 return computerChoice;               
             }
              
@@ -38,7 +38,7 @@
                     } else moveCheck = true;
                 } while (moveCheck);
                 // Return the chosen move
-                console.log(move);
+                // console.log(move);
                 return move;
             }
 
@@ -63,11 +63,23 @@
 
             function playGame() {
             // Declare humanScore & computerScore variables and initialize them with 0 value.
+            let humanScore = 0;
+            let computerScore = 0;
             // Make 5 iteration loop
+            for (i = 0; i < 5; i++) {
                 // Call playRound function
-                // If human won increment humanScore by 1
-                // If computer won increment computerScore by 1
+                console.log("Round:", i+1)
+                result = playRound(computerPlay(), getHumanMove());
+                // If human won increment humanScore by 1 or if computer won increment computerScore by 1
+                // console.log(result);
+                if (result === "Computer wins!") {
+                    computerScore++
+                } else if (result === "You win!") {
+                    humanScore++
+                } 
                 // Display round scores
+                console.log("Computer:", computerScore, "You:", humanScore);
+            }
             // Display game winner
             }
         </script>
