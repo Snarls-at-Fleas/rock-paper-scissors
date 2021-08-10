@@ -63,3 +63,9 @@ function playGame() {
         return "Computer won this game!"
     } else return "It's a tie!"
 }
+
+const buttons = document.querySelector('#rpsButtons');
+
+function buttonsGlow() {
+    document.addEventListener
+}

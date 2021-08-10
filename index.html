@@ -4,10 +4,46 @@
         <meta charset="utf-8">
         <title>RPS game (basic)</title>
         <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@600&display=swap" rel="stylesheet">
     </head>
     <body>
         <h1>Rock Paper Scissors Game</h1>
-        <p>Use your browser developers console to play.</p>
-        <p>Call playGame() function to start.</p>        
+        <p>Choose your move</p>
+        <div id = "rpsButtons">
+            <div id = "buttonRock">
+                <img src="/Pics/rps-rock.png">
+            </div>
+            <div id = "buttonPaper">
+                <img src="/Pics/rps-paper.png">
+            </div>
+            <div id = "buttonScissors">
+                <img src="/Pics/rps-scissors.png">
+            </div>
+        </div> 
+        <h2>Score</h2>
+        <div id = "scores">
+            <div id = "computerScore">
+                <h3>Computer:</h3>
+                <p>0</p>
+            </div>
+            <div id = "winner">
+                <p></p>
+            </div>
+            <div id = "humanScore">
+                <h3>Human:</h3>
+                <p>0</p>
+            </div>
+        </div>
+        <footer>
+            <p>This game was coded as a part of <a href="https://www.theodinproject.com/">Odin Project</a> 
+                front-end curicullum.</p>
+            
+            <p>Rock, Paper & Scissors icons are from <a href="https://www.vecteezy.com/free-vector/rock">
+                Vecteezy</a> & used with permission.</p>
+            
+            </footer>
     </body>
 </html>
