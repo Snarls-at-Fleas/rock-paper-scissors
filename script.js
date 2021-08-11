@@ -1,4 +1,5 @@
 function getComputerMove() {
+    // This function stays and works as written
     let computerMove= "";
     let moveNumber = Math.floor(Math.random() * 3) + 1;
     switch (moveNumber) {
@@ -15,6 +16,8 @@ function getComputerMove() {
 }
  
 function getHumanMove() {
+    // This function should be rewritten to get value of the pressed button when called from Event listener
+    // and return it as humanMove variable.
     let humanMove = "";
     let moveCheck = true;
     do {
@@ -28,6 +31,7 @@ function getHumanMove() {
 }
 
 function playRound(computerChoice, humanChoice) {
+    // This function mostly stays the same, but results should be displayed through UI not console
     let result = "";
     if (computerChoice === humanChoice) {
         result = "It's a tie!"
@@ -40,32 +44,35 @@ function playRound(computerChoice, humanChoice) {
     } else {
         result = "You win!";
     }
-    console.log("Computer chose", computerChoice, "and you chose", humanChoice, "=>", result);
+    // This part need to be rewritten
+    // console.log("Computer chose", computerChoice, "and you chose", humanChoice, "=>", result);
     return result;
 }
 
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;                
-    for (i = 0; i < 5; i++) {
-        console.log("Round:", i+1)
-        result = playRound(getComputerMove(), getHumanMove());
-        if (result === "Computer wins!") {
-            computerScore++
-        } else if (result === "You win!") {
-            humanScore++
-        } 
-        console.log("Computer:", computerScore, "You:", humanScore);
-    }
-    if (humanScore > computerScore) {
-        return "You won this game!"
-    } else if (computerScore > humanScore) {
-        return "Computer won this game!"
-    } else return "It's a tie!"
-}
+// This function should be rewritten to keep scores, declare winner when someone reaches 5 points
+// and offer to play another game 
+// function playGame() {
+//     let humanScore = 0;
+//     let computerScore = 0;                
+//     for (i = 0; i < 5; i++) {
+//         console.log("Round:", i+1)
+//         result = playRound(getComputerMove(), getHumanMove());
+//         if (result === "Computer wins!") {
+//             computerScore++
+//         } else if (result === "You win!") {
+//             humanScore++
+//         } 
+//         console.log("Computer:", computerScore, "You:", humanScore);
+//     }
+//     if (humanScore > computerScore) {
+//         return "You won this game!"
+//     } else if (computerScore > humanScore) {
+//         return "Computer won this game!"
+//     } else return "It's a tie!"
+// };
 
-const buttons = document.querySelector('#rpsButtons');
+// Event listener listens to any of the three buttons pressed & calls getHumanMove() func
 
-function buttonsGlow() {
-    document.addEventListener
-}
+// Need function that is called from playGame() when the user decides to play again
+// that resets all scores and calls playGame() again
+// Called from playGame() & calls playGame() again? Can it be a problem?

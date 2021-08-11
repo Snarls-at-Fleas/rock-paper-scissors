@@ -7,6 +7,7 @@ h1 {
     color: greenyellow;
     text-align: center;
     text-shadow: 0px 0px 10px;
+    font-size: xx-large;
 }
 
 p {
@@ -15,9 +16,85 @@ p {
     text-shadow: 0px 0px 5px;
 }
 
+#odinProjectMention {
+    color: greenyellow;
+    text-align: center;
+    text-shadow: 0px 0px 5px;
+    font-size: xx-small;
+}
+
 #rpsButtons {
     display: flex;
     justify-content: center;
+    background-color: transparent;
+}
+
+.button {
+    background-color: black;
+    border-style: double;
+    border-width: 5px;
+    color: greenyellow;
+    font-family: 'Tourney', cursive;
+    font-size: xx-large;
+    padding: 15px 32px;
+    margin: 0px 10px;
+    border-radius: 15px;
+    width: 220px;
+    height: 220px;
+    text-shadow: 0px 0px 10px;
+    cursor: pointer;
+    transition-duration: 0.7s;
+}
+
+#buttonRock {
+    color: magenta;
+    border-color: magenta;
+}
+
+#buttonRock:hover {
+    color: black;
+    background-color: magenta;
+    box-shadow: 0 0 50px 5px magenta;
+}
+
+#buttonRock:active {
+    transition-duration: 0.01s;
+    transform: scale(1.1);
+    
+}
+
+#buttonPaper {
+    color: cyan;
+    border-color: cyan;
+}
+
+#buttonPaper:hover {
+    color: black;
+    background-color: cyan;
+    box-shadow: 0 0 50px 5px cyan;
+}
+
+#buttonPaper:active {
+    transition-duration: 0.01s;
+    transform: scale(1.1);
+    
+}
+
+#buttonScissors {
+    color: yellow;
+    border-color: yellow;
+}
+
+#buttonScissors:hover {
+    color: black;
+    background-color: yellow;
+    box-shadow: 0 0 50px 5px yellow;
+}
+
+#buttonScissors:active {
+    transition-duration: 0.01s;
+    transform: scale(1.1);
+    
 }
 
 h2 {
@@ -46,4 +123,8 @@ footer {
     text-align: center;
     text-shadow: 0px 0px 10px;
     font-size: small;
+}
+
+#value {
+    font-size: xx-large;
 }
