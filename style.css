@@ -29,6 +29,11 @@ p {
     background-color: transparent;
 }
 
+.buttonDisabled {
+    color: rgb(29, 29, 29);
+    border-color: rgb(29, 29, 29);
+}
+
 .button {
     background-color: black;
     border-style: double;
@@ -115,7 +120,25 @@ h3 {
 }
 
 #winner {
+    font-size: x-large;
+}
+
+#roundResult {
+    width: 350px;
+}
+
+#gameResult {
+    font-size: xxx-large;
+}
+
+#computerChoice {
     font-size: xx-large;
+    width: 250px;
+}
+
+#humanChoice {
+    font-size: xx-large;
+    width: 250px;
 }
 
 footer {
@@ -125,6 +148,28 @@ footer {
     font-size: small;
 }
 
-#value {
+#computerScoreValue {
     font-size: xx-large;
+}
+
+#humanScoreValue {
+    font-size: xx-large;
+}
+
+#gameReset {
+    display: flex;
+    justify-content: center;
+}
+
+#buttonReset {
+    height: 80px;
+    width: 200px;
+    border-color: greenyellow;
+    font-size: x-large;
+}
+
+#buttonReset:hover {
+    color: black;
+    background-color: greenyellow;
+    box-shadow: 0 0 50px 5px greenyellow;
 }

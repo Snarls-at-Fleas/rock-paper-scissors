@@ -1,77 +1,115 @@
 function getComputerMove() {
-    // This function stays and works as written
     let computerMove= "";
     let moveNumber = Math.floor(Math.random() * 3) + 1;
     switch (moveNumber) {
     case 1:
-        computerMove = "rock";
+        computerMove = "Rock";
         break;
     case 2:
-        computerMove = "paper";
+        computerMove = "Paper";
         break;
     case 3: 
-        computerMove = "scissors"; 
+        computerMove = "Scissors"; 
     }
     return computerMove;               
 }
- 
-function getHumanMove() {
-    // This function should be rewritten to get value of the pressed button when called from Event listener
-    // and return it as humanMove variable.
-    let humanMove = "";
-    let moveCheck = true;
-    do {
-        humanMove = window.prompt("Your move: (Rock, Paper or Scissors)");
-        humanMove = humanMove.toLowerCase();
-        if (humanMove === "rock" || humanMove === "paper" || humanMove === "scissors") {
-            moveCheck = false;
-        } else moveCheck = true;
-    } while (moveCheck);               
-    return humanMove;
-}
 
-function playRound(computerChoice, humanChoice) {
-    // This function mostly stays the same, but results should be displayed through UI not console
+function playGame(computerChoice, humanChoice) {
     let result = "";
     if (computerChoice === humanChoice) {
-        result = "It's a tie!"
-    } else if (computerChoice === "rock" && humanChoice === "scissors") {
-        result = "Computer wins!";
-    } else if (computerChoice === "paper" && humanChoice === "rock") {
-        result = "Computer wins!";
-    } else if (computerChoice === "scissors" && humanChoice === "paper") {
-        result = "Computer wins!";
+        result = "This round is a tie!"
+    } else if (computerChoice === "Rock" && humanChoice === "Scissors") {
+        result = "Computer wins this round!";
+    } else if (computerChoice === "Paper" && humanChoice === "Rock") {
+        result = "Computer wins this round!";
+    } else if (computerChoice === "Scissors" && humanChoice === "Paper") {
+        result = "Computer wins this round!";
     } else {
-        result = "You win!";
+        result = "You win this round!";
     }
-    // This part need to be rewritten
-    // console.log("Computer chose", computerChoice, "and you chose", humanChoice, "=>", result);
-    return result;
+    const computerChoiceMessage = document.getElementById('computerChoice');
+    computerChoiceMessage.textContent = computerChoice;
+    const humanChoiceMessage = document.getElementById('humanChoice');
+    humanChoiceMessage.textContent = humanChoice;
+    const roundResultMessage = document.getElementById('roundResult');
+    roundResultMessage.textContent = result;
+
+    
+    if (result === "Computer wins this round!") {
+        computerScore++;
+    } else if (result === "You win this round!") {
+        humanScore++;
+    }
+
+    const computerScoreValueMessage = document.getElementById('computerScoreValue');
+    computerScoreValueMessage.textContent = computerScore;
+    const humanScoreValueMessage = document.getElementById('humanScoreValue');
+    humanScoreValueMessage.textContent = humanScore;
+
+    let gameResult = "";
+    if (computerScore === 5) {
+        result = "";
+        gameResult = "Computer won!"
+    } else if (humanScore === 5) {
+        result = "";
+        gameResult = "You won!"
+    };
+
+    const finalResultMessage = document.getElementById('gameResult');
+    finalResultMessage.textContent = gameResult;
+    roundResultMessage.textContent = result;
+
+    if (gameResult !== "") {
+        const gameReset = document.getElementById('gameReset');
+        gameReset.innerHTML =
+        '<button class = "button" id = "buttonReset" type="button" value="Reset">New Game</button>';
+        document.getElementById('buttonRock').disabled = true;
+        document.getElementById('buttonPaper').disabled = true;
+        document.getElementById('buttonScissors').disabled = true;
+        resetButton = document.querySelector('#buttonReset');
+        resetButton.addEventListener('click', () => {
+        if (resetButton.value === "Reset") {
+            resetGame();
+        };
+    });
+    };
 }
 
-// This function should be rewritten to keep scores, declare winner when someone reaches 5 points
-// and offer to play another game 
-// function playGame() {
-//     let humanScore = 0;
-//     let computerScore = 0;                
-//     for (i = 0; i < 5; i++) {
-//         console.log("Round:", i+1)
-//         result = playRound(getComputerMove(), getHumanMove());
-//         if (result === "Computer wins!") {
-//             computerScore++
-//         } else if (result === "You win!") {
-//             humanScore++
-//         } 
-//         console.log("Computer:", computerScore, "You:", humanScore);
-//     }
-//     if (humanScore > computerScore) {
-//         return "You won this game!"
-//     } else if (computerScore > humanScore) {
-//         return "Computer won this game!"
-//     } else return "It's a tie!"
-// };
+function resetGame() {
+    document.getElementById('buttonRock').disabled = false;
+    document.getElementById('buttonPaper').disabled = false;
+    document.getElementById('buttonScissors').disabled = false;
+    computerScore = 0;
+    humanScore = 0;
+    gameResult = "";
+    computerChoice = "";
+    humanChoice = "";
+    const computerScoreValueMessage = document.getElementById('computerScoreValue');
+    computerScoreValueMessage.textContent = computerScore;
+    const humanScoreValueMessage = document.getElementById('humanScoreValue');
+    humanScoreValueMessage.textContent = humanScore;
+    const finalResultMessage = document.getElementById('gameResult');
+    finalResultMessage.textContent = gameResult;
+    const computerChoiceMessage = document.getElementById('computerChoice');
+    computerChoiceMessage.textContent = computerChoice;
+    const humanChoiceMessage = document.getElementById('humanChoice');
+    humanChoiceMessage.textContent = humanChoice;
+    const gameReset = document.getElementById('gameReset');
+        gameReset.innerHTML = "";
+    
+}
 
-// Event listener listens to any of the three buttons pressed & calls getHumanMove() func
+const buttons = document.querySelectorAll('button');
+let humanMove = "";
+let humanScore = 0;
+let computerScore = 0;
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        humanMove = button.value;
+        playGame(getComputerMove(), button.value);
+    });
+});
 
 // Need function that is called from playGame() when the user decides to play again
 // that resets all scores and calls playGame() again
