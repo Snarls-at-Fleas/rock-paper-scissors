@@ -30,15 +30,11 @@ p {
 }
 
 .buttonDisabled {
-    color: rgb(29, 29, 29);
-    border-color: rgb(29, 29, 29);
-}
-
-.button {
+    color: rgb(34, 56, 0);
+    border-color: rgb(34, 56, 0);
     background-color: black;
     border-style: double;
     border-width: 5px;
-    color: greenyellow;
     font-family: 'Tourney', cursive;
     font-size: xx-large;
     padding: 15px 32px;
@@ -51,52 +47,91 @@ p {
     transition-duration: 0.7s;
 }
 
-#buttonRock {
+.buttonRock {
     color: magenta;
     border-color: magenta;
+    background-color: black;
+    border-style: double;
+    border-width: 5px;
+    font-family: 'Tourney', cursive;
+    font-size: xx-large;
+    padding: 15px 32px;
+    margin: 0px 10px;
+    border-radius: 15px;
+    width: 220px;
+    height: 220px;
+    text-shadow: 0px 0px 10px;
+    cursor: pointer;
+    transition-duration: 0.7s;
 }
 
-#buttonRock:hover {
+.buttonRock:hover {
     color: black;
     background-color: magenta;
     box-shadow: 0 0 50px 5px magenta;
 }
 
-#buttonRock:active {
+.buttonRock:active {
     transition-duration: 0.01s;
     transform: scale(1.1);
     
 }
 
-#buttonPaper {
+.buttonPaper {
     color: cyan;
     border-color: cyan;
+    background-color: black;
+    border-style: double;
+    border-width: 5px;
+    font-family: 'Tourney', cursive;
+    font-size: xx-large;
+    padding: 15px 32px;
+    margin: 0px 10px;
+    border-radius: 15px;
+    width: 220px;
+    height: 220px;
+    text-shadow: 0px 0px 10px;
+    cursor: pointer;
+    transition-duration: 0.7s;
 }
 
-#buttonPaper:hover {
+.buttonPaper:hover {
     color: black;
     background-color: cyan;
     box-shadow: 0 0 50px 5px cyan;
 }
 
-#buttonPaper:active {
+.buttonPaper:active {
     transition-duration: 0.01s;
     transform: scale(1.1);
     
 }
 
-#buttonScissors {
+.buttonScissors {
     color: yellow;
     border-color: yellow;
+    background-color: black;
+    border-style: double;
+    border-width: 5px;
+    font-family: 'Tourney', cursive;
+    font-size: xx-large;
+    padding: 15px 32px;
+    margin: 0px 10px;
+    border-radius: 15px;
+    width: 220px;
+    height: 220px;
+    text-shadow: 0px 0px 10px;
+    cursor: pointer;
+    transition-duration: 0.7s;
 }
 
-#buttonScissors:hover {
+.buttonScissors:hover {
     color: black;
     background-color: yellow;
     box-shadow: 0 0 50px 5px yellow;
 }
 
-#buttonScissors:active {
+.buttonScissors:active {
     transition-duration: 0.01s;
     transform: scale(1.1);
     
@@ -165,7 +200,21 @@ footer {
     height: 80px;
     width: 200px;
     border-color: greenyellow;
+    color: greenyellow;
     font-size: x-large;
+    background-color: black;
+    border-style: double;
+    border-width: 5px;
+    font-family: 'Tourney', cursive;
+    font-size: xx-large;
+    padding: 15px 32px;
+    margin: 0px 10px;
+    border-radius: 15px;
+    width: 250px;
+    height: 100px;
+    text-shadow: 0px 0px 10px;
+    cursor: pointer;
+    transition-duration: 0.7s;
 }
 
 #buttonReset:hover {

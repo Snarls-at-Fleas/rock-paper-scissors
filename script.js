@@ -66,6 +66,14 @@ function playGame(computerChoice, humanChoice) {
         document.getElementById('buttonRock').disabled = true;
         document.getElementById('buttonPaper').disabled = true;
         document.getElementById('buttonScissors').disabled = true;
+        // The following doesn't work because id specifity is higher than class specifity
+        document.getElementById('buttonRock').classList.toggle('buttonDisabled');
+        document.getElementById('buttonRock').classList.toggle('buttonRock');
+        document.getElementById('buttonPaper').classList.toggle('buttonDisabled');
+        document.getElementById('buttonPaper').classList.toggle('buttonPaper');
+        document.getElementById('buttonScissors').classList.toggle('buttonDisabled');
+        document.getElementById('buttonScissors').classList.toggle('buttonScissors');
+        // Till here (see above)
         resetButton = document.querySelector('#buttonReset');
         resetButton.addEventListener('click', () => {
         if (resetButton.value === "Reset") {
@@ -79,6 +87,12 @@ function resetGame() {
     document.getElementById('buttonRock').disabled = false;
     document.getElementById('buttonPaper').disabled = false;
     document.getElementById('buttonScissors').disabled = false;
+    document.getElementById('buttonRock').classList.toggle('buttonDisabled');
+    document.getElementById('buttonRock').classList.toggle('buttonRock');
+    document.getElementById('buttonPaper').classList.toggle('buttonDisabled');
+    document.getElementById('buttonPaper').classList.toggle('buttonPaper');
+    document.getElementById('buttonScissors').classList.toggle('buttonDisabled');
+    document.getElementById('buttonScissors').classList.toggle('buttonScissors');
     computerScore = 0;
     humanScore = 0;
     gameResult = "";
